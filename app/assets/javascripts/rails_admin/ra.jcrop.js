@@ -51,8 +51,8 @@
         bgColor: 'white',
         keySupport: false,
         onSelect: widget.updateCoordinates
-      }, rails_admin_jcrop_options);
-      dialog.find('img.jcrop-subject').Jcrop(jcrop_options)
+      }, rails_admin_jcrop_options[dialog.find('#crop_field').val()]);
+      dialog.find('img.jcrop-subject').Jcrop(jcrop_options);
 
       form.attr("data-remote", true);
       dialog.find('.modal-header-title').text(form.data('title'));
@@ -78,7 +78,7 @@
           var select = widget.element.find('select').filter(":hidden");
 
           thumb = widget.element.find('a.jcrop_handle').data('thumb');
-          widget.element.find('img.img-polaroid').removeAttr('src').attr('src', json.urls[thumb] + '?' + new Date().valueOf());
+          widget.element.find('img.img-thumbnail').removeAttr('src').attr('src', json.urls[thumb] + '?' + new Date().valueOf());
 
           widget._trigger("success");
           dialog.modal("hide");
