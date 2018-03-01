@@ -4,6 +4,5 @@
   = hidden_field_tag :crop_y
   = hidden_field_tag :crop_w
   = hidden_field_tag :crop_h
-  = hidden_field_tag :crop_field, "#{@object.type}_#@field"
+  = hidden_field_tag :crop_field, @field
   = render :partial => 'rails_admin/main/submit_buttons'
-
