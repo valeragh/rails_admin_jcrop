@@ -142,6 +142,10 @@ You should do the following
 
 Where image your `mount_uploader` field
 
+* Also you may need add the following to your `config/initializers/assets.rb`
+
+`Rails.application.config.assets.precompile += %w[rails_admin/ra.jcrop.css]`
+
 ## Contributing ##
 
 Any help is encouraged. Here are some ways you can contribute:
