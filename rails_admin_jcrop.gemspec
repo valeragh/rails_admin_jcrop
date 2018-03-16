@@ -14,8 +14,14 @@ Gem::Specification.new do |s|
   s.description = "#{s.summary} Image cropping made easy!"
 
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
-
-  s.add_dependency "rails", ">= 4.0"
+  
+  s.add_dependency "activesupport"
+  s.add_dependency "actionpack"
+  s.add_dependency "actionview"
+  s.add_dependency "activemodel"
+  s.add_dependency "activerecord"
+  s.add_dependency "activestorage"
+  s.add_dependency "railties"
   s.add_dependency "rails_admin", ">= 0.6.5"
   s.add_dependency "mini_magick"
 end
