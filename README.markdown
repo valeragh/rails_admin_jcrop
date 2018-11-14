@@ -10,7 +10,7 @@ gem 'rails_admin'
 # recommended to require it explictly before rails_admin_jcrop
 # e.g. if you use carrierwave
 # gem 'carrierwave', :require => 'carrierwave'
-gem 'rails_admin_jcrop' #, git: 'git://github.com/janx/rails_admin_jcrop.git'
+gem 'rails_admin_jcrop', github: 'zhisme/rails_admin_jcrop'
 ```
 
 2. Configure your model field to use Jcrop:
