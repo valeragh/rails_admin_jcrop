@@ -9,25 +9,17 @@ module RailsAdminJcrop
         obj.send(field).recreate_versions!
       end
     end
+  end
+end
 
-    module CarrierWave
+module CarrierWave
+  module Uploader
+    class Base
       def rails_admin_crop
         return unless model.rails_admin_cropping?
         manipulate! do |img|
           ::RailsAdminJcrop::ImageHelper.crop(img, model.crop_w, model.crop_h, model.crop_x, model.crop_y)
           img
-        end
-      end
-    end
-  end
-end
-
-module CarrierWave
-  module Mount
-    module Extension
-      def self.included(base)
-        base.uploaders.each do |name, klass|
-          klass.send :include, RailsAdminJcrop::AssetEngine::CarrierWave
         end
       end
     end

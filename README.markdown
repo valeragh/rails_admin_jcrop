@@ -29,23 +29,7 @@ config.model User do
 end
 ```
 
-3. Configure your carrierwave application uploader
-
-```ruby
-class ApplicationUploader < CarrierWave::Uploader::Base
-  ...
-  def rails_admin_crop
-    return unless model.rails_admin_cropping?
-    manipulate! do |img|
-      ::RailsAdminJcrop::ImageHelper.
-        crop(img, model.crop_w, model.crop_h, model.crop_x, model.crop_y)
-      img
-    end
-  end
-end
-```
-
-4. If you use Paperclip, you need to do nothing here, rails_admin_jcrop will append RailsAdminJcropper processor to your attachment automatically. If CarrierWave is used, please invoke  :rails_admin_crop in your uploader:
+3. If you use Paperclip, you need to do nothing here, rails_admin_jcrop will append RailsAdminJcropper processor to your attachment automatically. If CarrierWave is used, please invoke  :rails_admin_crop in your uploader:
 
 ```ruby
 class AvatarUploader < CarrierWave::Uploader::Base
@@ -58,7 +42,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 end
 ```
 
-5. Done! Click the image on your RailsAdmin model edit page and enjoy cropping!
+4. Done! Click the image on your RailsAdmin model edit page and enjoy cropping!
 ![Cropping Screenshot](https://github.com/janx/rails_admin_jcrop/raw/master/screenshots/example.png)
 
 ### Tips ###
