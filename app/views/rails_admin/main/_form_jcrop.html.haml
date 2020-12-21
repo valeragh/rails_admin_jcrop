@@ -1,6 +1,6 @@
 :javascript
   if (typeof window.rails_admin_jcrop_options == 'undefined') window.rails_admin_jcrop_options = {};
-  window.rails_admin_jcrop_options.#{field.abstract_model.model_name}_#{field.name} = #{field.jcrop_options.to_json};
+  window.rails_admin_jcrop_options.#{field.abstract_model.model_name}_#{field.name} = #{field.jcrop_options.to_json.html_safe};
 
 = stylesheet_link_tag 'rails_admin/jquery.Jcrop'
 = javascript_include_tag 'rails_admin/jquery.Jcrop'
