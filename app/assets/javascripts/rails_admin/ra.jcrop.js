@@ -50,9 +50,6 @@
       var jcrop_options = $.extend({
         bgColor: 'black',
         bgOpacity: 0.3,
-        setSelect: [ 300, 300, 150, 150 ],
-        aspectRatio: 3 / 2,
-        keySupport: false,
         onSelect: widget.updateCoordinates
       }, rails_admin_jcrop_options[dialog.find('#crop_field').val()]);
       dialog.find('img.jcrop-subject').Jcrop(jcrop_options);
